@@ -1,6 +1,12 @@
+Please note that jvncsender uses:
+
+- http://www.tightvnc.com/
+- http://www.jcraft.com/jsch/ (as it is used by tightvnc)
+
+
 Usage from the commandline: 
 
-usage: java -jar jvnckeysender.jar [-list] [-help] -host <hostname> -port <port> -text <text> [-password <password>] [-wait <seconds>]
+usage: java -jar jvncsender.jar [-list] [-help] -host <hostname> -port <port> -text <text> [-password <password>] [-wait <seconds>]
  -help                  print this message
  -host <hostname>       hostname or ip-address to send it to
  -list                  list keymappings

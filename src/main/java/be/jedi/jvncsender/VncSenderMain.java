@@ -79,7 +79,7 @@ public class VncSenderMain {
 		formatter.setWidth(150);
 		formatter.setOptionComparator(null);
 		
-		formatter.printHelp( "java -jar jvnckeysender.jar [-list] [-help] -host <hostname> -port <port> -text <text> [-password <password>] [-wait <seconds>]","", options,
+		formatter.printHelp( "java -jar jvncsender.jar [-list] [-help] -host <hostname> -port <port> -text <text> [-password <password>] [-wait <seconds>]","", options,
 				"\ntext can also take special keys f.i. like \"linux ks=ks.cfg<RETURN>\"\n use -list options to see all keymappings	\n" );	
 	}
 	
