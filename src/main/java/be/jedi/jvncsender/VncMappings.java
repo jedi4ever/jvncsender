@@ -114,7 +114,6 @@ public class VncMappings {
       builder.put("<DEAD_CEDILLA>", KeyEvent.VK_DEAD_CEDILLA);
       builder.put("<DEAD_CIRCUMFLEX>", KeyEvent.VK_DEAD_CIRCUMFLEX);
       builder.put("<DEAD_DIAERESIS>", KeyEvent.VK_DEAD_DIAERESIS);
-      builder.put("<DEAD_DIAERESIS>", KeyEvent.VK_DEAD_DIAERESIS);
       builder.put("<DEAD_DOUBLEACUTE>", KeyEvent.VK_DEAD_DOUBLEACUTE);
       builder.put("<DEAD_GRAVE>", KeyEvent.VK_DEAD_GRAVE);
       builder.put("<DEAD_IOTA>", KeyEvent.VK_DEAD_IOTA);
