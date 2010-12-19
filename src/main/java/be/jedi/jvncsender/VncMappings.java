@@ -25,17 +25,27 @@ public class VncMappings {
 
    static Map<String, Integer> createKeyMap() {
       Builder<String, Integer> builder = ImmutableMap.builder();
-
+      
+      //lowercase a= 0x0061
       String key = "a";
+      
       for (int i = 0; i < 26; i++) {
          int charValue = key.charAt(0);
-         builder.put(String.valueOf((char) (charValue + i)), KeyEvent.VK_A + i);
+         builder.put(String.valueOf((char) (charValue + i)), 0x0061 + i);
       }
 
+      
+      key = "A";
+      for (int i = 0; i < 26; i++) {
+         int charValue = key.charAt(0);
+
+         builder.put(String.valueOf((char) (charValue + i)), 0x0041 + i );
+      }
+      
       key = "0";
       for (int i = 0; i < 10; i++) {
          int charValue = key.charAt(0);
-         builder.put(String.valueOf((char) (charValue + i)), KeyEvent.VK_0 + i);
+         builder.put(String.valueOf((char) (charValue + i)), 0x0030 + i);
       }
 
       // builder.put("{", KeyEvent.VK_BRACELEFT);
@@ -233,11 +243,7 @@ public class VncMappings {
    static Map<String, Integer[]> createSequencesMap() {
       Builder<String, Integer[]> builder = ImmutableMap.builder();
 
-      String key = "A";
-      for (int i = 0; i < 26; i++) {
-         int charValue = key.charAt(0);
-         builder.put(String.valueOf((char) (charValue + i)), new Integer[] { 0xffe1, KeyEvent.VK_A + i });
-      }
+
 
       builder.put("<BACK_TICK>", new Integer[] { KeyEvent.VK_Z + 6 });
       builder.put("<BACK_QUOTE>", new Integer[] { KeyEvent.VK_Z + 6 });

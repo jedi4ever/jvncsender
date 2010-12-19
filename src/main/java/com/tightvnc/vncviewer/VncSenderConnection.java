@@ -78,10 +78,16 @@ public class VncSenderConnection {
       boolean control = false;
       boolean meta = false;
 
+//      //reset modifiers
+//      rfb.writeKeyEvent(0xffe1, false);
+//      rfb.writeKeyEvent(0xffe9, false);
+//      rfb.writeKeyEvent(0xffe3, false);
+//      rfb.writeKeyEvent(0xffe7, false);
+      
       Iterator<Integer> KeysIterator = keys.iterator();
       while (KeysIterator.hasNext()) {
          Integer key = KeysIterator.next();
-         // System.out.println(Integer.toHexString(key) +"||");
+  //        System.out.println(Integer.toHexString(key) +"||");
          System.out.print(".");
 
          switch (key) {
@@ -103,7 +109,9 @@ public class VncSenderConnection {
             break;
          default: {
 
+        	//Key Press
             rfb.writeKeyEvent(key, true);
+            //Key Release
             rfb.writeKeyEvent(key, false);
 
             // Reset modifiers after
@@ -123,8 +131,9 @@ public class VncSenderConnection {
                rfb.writeKeyEvent(0xffe7, false);
                meta = false;
             }
+            System.out.println(rfb.eventBufLen);
             rfb.os.write(rfb.eventBuf, 0, rfb.eventBufLen);
-
+            //resetting the buffer
             rfb.eventBufLen = 0;
          }
 
