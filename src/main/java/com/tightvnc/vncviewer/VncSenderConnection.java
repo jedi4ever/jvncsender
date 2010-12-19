@@ -131,7 +131,6 @@ public class VncSenderConnection {
                rfb.writeKeyEvent(0xffe7, false);
                meta = false;
             }
-            System.out.println(rfb.eventBufLen);
             rfb.os.write(rfb.eventBuf, 0, rfb.eventBufLen);
             //resetting the buffer
             rfb.eventBufLen = 0;
