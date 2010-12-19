@@ -1,5 +1,6 @@
 package be.jedi.jvncsender;
 
+import com.google.common.collect.ImmutableList;
 import com.tightvnc.vncviewer.VncSenderConnection;
 
 public class VncSender {
@@ -24,7 +25,11 @@ public class VncSender {
       this.sendText(vncTextArray);
    }
 
-   public void sendText(String vncText[]) {
+   public void sendText(String... vncText) {
+      sendText(ImmutableList.copyOf(vncText));
+   }
+
+   public void sendText(Iterable<String> vncText) {
 
       // Ignore Cert file
       // https://www.chemaxon.com/forum/ftopic65.html&highlight=jmsketch+signer
@@ -33,9 +38,9 @@ public class VncSender {
       try {
          jvnc.open();
 
-         for (int i = 0; i < vncText.length; i++) {
+         for (String line : vncText) {
 
-            jvnc.print(vncText[i]);
+            jvnc.print(line);
 
             sleep(vncWaitTime);
          }
