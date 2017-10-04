@@ -186,9 +186,7 @@ public class VncSenderConnection {
 
       showConnectionStatus("Connecting to " + host + ", port " + port + "...");
 
-      VncViewer dummy = new VncViewer();
-
-      rfb = new RfbProto(host, port, dummy);
+      rfb = new RfbProto(host, port, null);
       showConnectionStatus("Connected to server");
 
       rfb.readVersionMsg();
